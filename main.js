@@ -32,3 +32,8 @@ function addToCar(param){
     document.getElementById("item-cart").innerHTML = "Items";
     console.log(param)
 }
+
+function viewCart(){
+    document.getElementById("section-categories")
+    
+}
