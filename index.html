@@ -14,6 +14,7 @@
 </head>
 <body>
    
+    <!--Header-->
     <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand titulo" href="#">Restaurant & Lounge</a>
@@ -29,32 +30,75 @@
     <img class="header-img" src="https://i.imgur.com/S8Ffdqa.png">
     </header>
     <hr>
-    <section class="menu">
+
+    <!-- Food categories Starts-->
+    <section class="categories">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Burgers<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#" onclick="cargar('Tacos')">Tacos</a>
-                <a class="nav-item nav-link" href="#" onclick="cargar('Salads')" >Salads</a>
-                <a class="nav-item nav-link" href="#" onclick="cargar('Desserts')">Desserts</a>
-                <a class="nav-item nav-link" href="#" onclick="cargar('Drinks and Sides')">Drinks & Sides</a>
+                <ul class="nav" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-item nav-link active" href="#Burgers" id="BurgersNavBar" data-toggle="tab" role="tab" aria-controls="Burgers" aria-selected="true">Burgers</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-item nav-link" href="#Tacos" id="TacosNavBar" data-toggle="tab" role="tab" aria-controls="Tacos" aria-selected="false" >Tacos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-item nav-link" href="#Salads" id="SaladsNavBar" data-toggle="tab" role="tab" aria-controls="Salads" aria-selected="true" >Salads</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-item nav-link" href="#Desserts" id="DessertsNavBar" data-toggle="tab" role="tab" aria-controls="Desserts" aria-selected="true" >Desserts</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-item nav-link" href="#Drinks" id="DrinksNavBar" data-toggle="tab" role="tab" aria-controls="Drinks" aria-selected="true" >Drinks & Sides</a>
+                  </li>
+                </ul>
               </div>
             </div>
           </nav>
     </section>
-    <hr>
-    <section class="categories" id="categories" style="display: block;">
-        <div class="container">
-            <h1 id="categoria">Burger</h1>
-            <div id="cards"></div>
-        </div>
-    </section>
 
-    <section class="orderDetail" id="detail" style="display: none;">
-        <div class="container">
-            <h1 id="categoria">Order detail</h1>
-        </div>
-    </section>
+    <hr>
+    
+    <!-- Food categories ends-->
+
+    <!-- Navbar Supported Content starts-->
+
+    <div class="tab-content" id="myTabContent">
+        <section id="Burgers" class="tab-pane fade show active"  role="tabpanel" aria-labelledby="BurgersNavBar"  aria-selected="true">
+            <h2 class="text-center">Burgers</h2>
+            <hr>    
+            <div class="card-deck" id="BurguersDeck">
+            </div>
+       </section>
+          <section id="Tacos" class="tab-pane fade"  role="tabpanel" aria-labelledby="SaladsNavBar" aria-selected="false">
+            <h2 class="text-center">Tacos</h2>
+            <hr>    
+            <div class="card-deck row" id="TacosDeck">
+            </div>
+          </section>
+          <section id="Salads"  class="tab-pane fade "  role="tabpanel" aria-labelledby="SaladsNavBar" aria-selected="false">
+            <h2 class="text-center">Salads</h2>
+            <hr>    
+            <div class="card-deck row" id="SaladsDeck">
+            </div>
+          </section>
+          <section id="Desserts"  class="tab-pane fade"  role="tabpanel" aria-labelledby="DessertsNavBar" aria-selected="false">
+            <h2 class="text-center">Desserts</h2>
+            <hr>    
+            <div class="card-deck row" id="DessertsDeck">
+            </div>
+          </section>
+          <section id="Drinks"  class="tab-pane fade"  role="tabpanel" aria-labelledby="DrinksNavBar" >
+            <h2 class="text-center">Drinks & Sides</h2>
+            <hr>    
+            <div class="card-deck row" id="Drinks and SidesDeck">
+            </div>
+          </section>
+       </div>
+           
+    <!-- Navbar Supported Content ends-->
+
 
     
 
