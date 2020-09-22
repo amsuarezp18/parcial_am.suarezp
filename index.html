@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+   
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand titulo" href="#">Restaurant & Lounge</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="viewCart()"><img src="https://i.imgur.com/1EKrQIi.png" width="45px" height="45px"></a>
+              </li>
+            </ul>
+          </div>
+    </nav>
+    <hr>
+    <img class="header-img" src="https://i.imgur.com/S8Ffdqa.png">
+    </header>
+    <hr>
+    <section class="menu">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Burgers<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#" onclick="cargar('Tacos')">Tacos</a>
+                <a class="nav-item nav-link" href="#" onclick="cargar('Salads')" >Salads</a>
+                <a class="nav-item nav-link" href="#" onclick="cargar('Desserts')">Desserts</a>
+                <a class="nav-item nav-link" href="#" onclick="cargar('Drinks and Sides')">Drinks & Sides</a>
+              </div>
+            </div>
+          </nav>
+    </section>
+    <hr>
+    <section class="categories" id="categories" style="display: block;">
+        <div class="container">
+            <h1 id="categoria">Burger</h1>
+            <div id="cards"></div>
+        </div>
+    </section>
+
+    <section class="orderDetail" id="detail" style="display: none;">
+        <div class="container">
+            <h1 id="categoria">Order detail</h1>
+        </div>
+    </section>
+
+    
+
+    <footer class="footersection">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 footer-div">
+                    <div>
+                        <h3 class="titulo">Restaurant & Lounge</h3>
+                        <p>Te llevamos tu comida favorita.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 footer-div text-center">
+                    <div>
+                        <h3>Navegar links</h3>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#service">Servicios</a></li>
+                        <li><a href="#price">Precios</a></li>
+                        <li><a href="#about">Equipo</a></li>
+                        <li><a href="#contact">Contáctanos</a></li>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-12 footer-div">
+                    <div>
+                        <h3>Redes sociales</h3>
+                        <p>.Instagram</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5 text-center">
+                <p> Copyright @2020 All rights reserved by Angela María Suárez</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script>
+    
+
+</script>
+</html>
