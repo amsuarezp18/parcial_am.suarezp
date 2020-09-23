@@ -35,7 +35,6 @@ function addToCart(param){
     document.getElementById("item-cart").innerHTML = "Items " + cart.length;
 }
 
-
 function viewCart(){
     document.getElementById("myTabContent").style.display='none';
     document.getElementById("order").style.display='block';
@@ -80,14 +79,14 @@ function viewCart(){
   });
   document.getElementById("total").innerHTML = `Total $${total.toFixed(2)}`;
 
-    
 }
 
 function receipt() {
     viewMenu();
     receipt = []
     let i = 0;
-    cart.forEach((product) => {
+    let mycart = Array.from(new Set(cart));
+    mycart.forEach((product) => {
 
         let count = () => {
             let counting = 0;
