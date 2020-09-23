@@ -85,9 +85,24 @@ function viewCart(){
 
 function receipt() {
     viewMenu();
+    receipt = []
+    let i = 0;
     cart.forEach((product) => {
-        console.log("jkfljfkg")
+
+        let count = () => {
+            let counting = 0;
+            cart.forEach((item) =>{
+                if (item.name === product.name) {
+                    counting++;
+                }
+            });
+            return counting;
+        }
+
+        let food = { item : i++, quantity: count() , description: product.name , unitPrice : product.price}
+        receipt.push(food);
     });
+    console.log(receipt)
     
 }
 
