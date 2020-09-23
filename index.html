@@ -153,11 +153,9 @@
                         Cancel
                     </button>
                     &nbsp;
-                    <button type="button" class="btn btn-fade-pink">Confirm order</button>
+                    <button type="button" onclick="receipt()" class="btn btn-fade-pink">Confirm order</button>
                 </div>
             </div>
-
-
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
@@ -173,9 +171,11 @@
                             Are you sure about cancelling the order?
                         </div>
                         <div class="modal-footer">
-                            <button type="button" onclick="emptyCart()" data-dismiss="modal" class="btn btn-fade-pink ">Yes, I want to cancel the order</button>
-                            <button type="button" class="btn-red-bright" data-dismiss="modal">No, I want to continue adding products</button>
-                           
+                            <button type="button" onclick="emptyCart()" data-dismiss="modal"
+                                class="btn btn-fade-pink ">Yes, I want to cancel the order</button>
+                            <button type="button" class="btn-red-bright" data-dismiss="modal">No, I want to continue
+                                adding products</button>
+
                         </div>
                     </div>
                 </div>

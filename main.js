@@ -45,7 +45,16 @@ function viewCart(){
     let i = 0;
 
     mycart.forEach((producto) => {
-    let count = countingPro(producto,cart)
+
+    let count = () => {
+        let counting = 0;
+        cart.forEach((item) =>{
+            if (item.name === producto.name) {
+                counting++;
+            }
+        });
+        return counting;
+    }
     let tabla = document.getElementsByClassName("body-table")[0];
     var row = tabla.insertRow(-1);
 
@@ -61,11 +70,11 @@ function viewCart(){
     var amount = row.insertCell(4);
         
     item.innerHTML = ++i;
-    qty.innerHTML = count;
+    qty.innerHTML = count();
     description.innerHTML = producto.name;
     unitp.innerHTML = producto.price;
-    amountP = producto.price * count;
-    total += amountP
+    amountP = producto.price * count();
+    total += amountP;
     amount.innerHTML = amountP.toFixed(2);
 
   });
@@ -74,15 +83,12 @@ function viewCart(){
     
 }
 
-// No la pude hacer en un arrow function
-function countingPro(product, array){
-    let counting = 0;
-    array.forEach((products) => {
-        if (products.name === product.name) {
-        counting++;
-        }
+function receipt() {
+    viewMenu();
+    cart.forEach((product) => {
+        console.log("jkfljfkg")
     });
-    return counting;
+    
 }
 
 function viewMenu(){
