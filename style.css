@@ -40,3 +40,13 @@ li{
 #order {
     display: none;
 }
+
+.flex-init {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flex-end {
+    display: flex;
+    justify-content: flex-start;
+}
