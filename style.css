@@ -19,7 +19,7 @@
 
 a {
     text-decoration: none;
-  }
+}
   
 li{
       list-style: none;
@@ -49,4 +49,8 @@ li{
 .flex-end {
     display: flex;
     justify-content: flex-start;
+}
+
+.item-cart {
+    padding: 20px 0;
 }
