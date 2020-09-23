@@ -54,3 +54,19 @@ li{
 .item-cart {
     padding: 20px 0;
 }
+
+.btn-fade-pink {
+    background-color: #FFAC94;
+    border-color: black;
+    float: right;
+    border-style: groove;
+    border-radius: 5px;
+  }
+
+  .btn-red-bright {
+    background-color: #EE4E4E;
+    border-color: #1BCA9A;
+    float: right;
+    border-style: groove;
+    border-radius: 5px;
+  }

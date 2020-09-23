@@ -29,7 +29,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#" onclick="viewCart()"><img src="https://imgur.com/1EKrQIi.png" height="50px;" alt="Shopping car">
+                        <a href="#" onclick="viewCart()"><img src="https://imgur.com/1EKrQIi.png" height="50px;"
+                                alt="Shopping car">
                             <span id="item-cart"></span>
                         </a>
                     </li>
@@ -80,42 +81,43 @@
 
     <!-- Navbar Supported Content and cards starts-->
     <div class="container">
-    <div class="tab-content" id="myTabContent">
-        <section id="Burgers" class="tab-pane fade show active" role="tabpanel" aria-labelledby="BurgersNavBar"
-            aria-selected="true">
-            <h2 class="text-center">Burgers</h2>
-            <hr>
-            <div class="card-deck" id="BurguersDeck">
-            </div>
-        </section>
-        <section id="Tacos" class="tab-pane fade" role="tabpanel" aria-labelledby="SaladsNavBar" aria-selected="false">
-            <h2 class="text-center">Tacos</h2>
-            <hr>
-            <div class="card-deck row" id="TacosDeck">
-            </div>
-        </section>
-        <section id="Salads" class="tab-pane fade " role="tabpanel" aria-labelledby="SaladsNavBar"
-            aria-selected="false">
-            <h2 class="text-center">Salads</h2>
-            <hr>
-            <div class="card-deck row" id="SaladsDeck">
-            </div>
-        </section>
-        <section id="Desserts" class="tab-pane fade" role="tabpanel" aria-labelledby="DessertsNavBar"
-            aria-selected="false">
-            <h2 class="text-center">Desserts</h2>
-            <hr>
-            <div class="card-deck row" id="DessertsDeck">
-            </div>
-        </section>
-        <section id="Drinks" class="tab-pane fade" role="tabpanel" aria-labelledby="DrinksNavBar">
-            <h2 class="text-center">Drinks & Sides</h2>
-            <hr>
-            <div class="card-deck row" id="Drinks and SidesDeck">
-            </div>
-        </section>
+        <div class="tab-content" id="myTabContent">
+            <section id="Burgers" class="tab-pane fade show active" role="tabpanel" aria-labelledby="BurgersNavBar"
+                aria-selected="true">
+                <h2 class="text-center">Burgers</h2>
+                <hr>
+                <div class="card-deck" id="BurguersDeck">
+                </div>
+            </section>
+            <section id="Tacos" class="tab-pane fade" role="tabpanel" aria-labelledby="SaladsNavBar"
+                aria-selected="false">
+                <h2 class="text-center">Tacos</h2>
+                <hr>
+                <div class="card-deck row" id="TacosDeck">
+                </div>
+            </section>
+            <section id="Salads" class="tab-pane fade " role="tabpanel" aria-labelledby="SaladsNavBar"
+                aria-selected="false">
+                <h2 class="text-center">Salads</h2>
+                <hr>
+                <div class="card-deck row" id="SaladsDeck">
+                </div>
+            </section>
+            <section id="Desserts" class="tab-pane fade" role="tabpanel" aria-labelledby="DessertsNavBar"
+                aria-selected="false">
+                <h2 class="text-center">Desserts</h2>
+                <hr>
+                <div class="card-deck row" id="DessertsDeck">
+                </div>
+            </section>
+            <section id="Drinks" class="tab-pane fade" role="tabpanel" aria-labelledby="DrinksNavBar">
+                <h2 class="text-center">Drinks & Sides</h2>
+                <hr>
+                <div class="card-deck row" id="Drinks and SidesDeck">
+                </div>
+            </section>
+        </div>
     </div>
-</div>
     <!-- Navbar Supported Content and cards ends-->
     <section id="order">
         <div class="container">
@@ -145,9 +147,39 @@
                     <p>Total : </p>
                 </div>
                 <div class="col-6 d-flex justify-content-end">
-                    <button type="button" class="btn btn-danger">Cancel</button> &nbsp; <button type="button" class="btn btn-secondary">Confirmar pedido</button>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-red-bright" data-toggle="modal" data-target="#exampleModal">
+                        Cancel
+                    </button>
+                    &nbsp;
+                    <button type="button" class="btn btn-fade-pink">Confirm order</button>
                 </div>
-            </div> 
+            </div>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Cencel de order</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure about cancelling the order?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" onclick="emptyCart()" data-dismiss="modal" class="btn btn-fade-pink ">Yes, I want to cancel the order</button>
+                            <button type="button" class="btn-red-bright" data-dismiss="modal">No, I want to continue adding products</button>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

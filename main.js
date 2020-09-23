@@ -15,7 +15,7 @@ fetch("https://gist.githubusercontent.com/josejbocanegra/9a28c356416badb8f9173da
     }));
 
 function addProduct(product, section) {
-    section.innerHTML += `<div class="card col-3 my-3" style="max-width: 15.2rem; min-width: 15.2rem;">
+    section.innerHTML += `<div class="card col-3 my-3" style="max-width: 13rem; min-width: 13rem;">
     <img class="card-img-top" src="${product.image}" alt="${product.name}">
     <div class="card-body">
       <h5 class="card-title">${product.name}</h5>
@@ -28,7 +28,14 @@ function addProduct(product, section) {
 }
 
 function addToCar(param){
-    cart.push(param)
+    let obj = products.find((producto) => producto.name === param);
+    cart.push(obj)
+
+    let total = 0;
+    let i = 0;
+
+    console.log("ññññññññññññññññññ")
+    console.log(obj.name)
     document.getElementById("item-cart").innerHTML = "Items " + cart.length;
     
     var tabla = document.getElementsByClassName("body-table")[0];
@@ -45,9 +52,9 @@ function addToCar(param){
     // Inserta una columna en la fila amount
     var amount = row.insertCell(4);
 
-    item.innerHTML = "edrfghjk";
-    qty.innerHTML = "edrfghjk";
-    description.innerHTML = "edrfghjk";
+    item.innerHTML = obj.name;
+    qty.innerHTML = obj.name;
+    description.innerHTML = obj.name;
     unitp.innerHTML = "edrfghjk";
     amount.innerHTML = "edrfghjk";
 }
@@ -63,3 +70,21 @@ function viewMenu(){
     document.getElementById("myTabContent").style.display='block';
     document.getElementById("order").style.display='none';
 }
+
+
+function emptyCart() {
+    cart = [];
+    let filas = document.getElementsByClassName("body-table")[0];
+    while (filas.firstChild) {
+      filas.removeChild(filas.firstChild);
+    }
+    viewMenu()
+    alert("Your order was canceled, the cart is now empty");
+
+}
+
+
+  
+ 
+   
+  
