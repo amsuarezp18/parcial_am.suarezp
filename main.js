@@ -40,11 +40,14 @@ function viewCart(){
     document.getElementById("myTabContent").style.display='none';
     document.getElementById("order").style.display='block';
     
+    let mycart = Array.from(new Set(cart));
     let total = 0;
     let i = 0;
-    
-    
-    var tabla = document.getElementsByClassName("body-table")[0];
+
+    mycart.forEach((producto) => {
+
+    let count = 2;
+    let tabla = document.getElementsByClassName("body-table")[0];
     var row = tabla.insertRow(-1);
 
     // Inserta un columna en la fila item
@@ -57,13 +60,18 @@ function viewCart(){
     var unitp = row.insertCell(3);
     // Inserta una columna en la fila amount
     var amount = row.insertCell(4);
-
+        
     item.innerHTML = ++i;
-    qty.innerHTML = obj.name;
-    description.innerHTML = obj.name;
-    unitp.innerHTML = "edrfghjk";
-    amount.innerHTML = "edrfghjk";
+    qty.innerHTML = 2;
+    description.innerHTML = producto.name;
+    unitp.innerHTML = producto.price;
+    parc = producto.price * count;
+    amount.innerHTML = parc.toFixed(2);
 
+  });
+  document.getElementById("total").innerHTML = `Total $${total.toFixed(2)}`;
+
+    
 }
 
 function viewMenu(){
@@ -75,6 +83,9 @@ function viewMenu(){
 function emptyCart() {
     cart = [];
     let filas = document.getElementsByClassName("body-table")[0];
+    document.getElementById("item-cart").innerHTML = "Items " + cart.length;
+    document.getElementById("item-cart").style.display='none';
+
     while (filas.firstChild) {
       filas.removeChild(filas.firstChild);
     }
