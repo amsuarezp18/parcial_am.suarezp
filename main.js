@@ -34,8 +34,6 @@ function addToCar(param){
     let total = 0;
     let i = 0;
 
-    console.log("ññññññññññññññññññ")
-    console.log(obj.name)
     document.getElementById("item-cart").innerHTML = "Items " + cart.length;
     
     var tabla = document.getElementsByClassName("body-table")[0];
