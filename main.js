@@ -23,13 +23,13 @@ function addProduct(product, section) {
         <h5 class="card-title">${product.name}</h5>
         <p class="card-text">${product.description}</p>
         <p class="card-text"><strong>$${product.price}</strong></p>
-        <a href="#" class="btn btn-dark" onclick="addToCar('${product.name}');">Add to cart</a>
+        <a href="#" class="btn btn-dark" onclick="addToCart('${product.name}');">Add to cart</a>
         </div>
         </div>
         </div>`;
 }
 
-function addToCar(param){
+function addToCart(param){
     let food = products.find((producto) => producto.name === param);
     cart.push(food)
     document.getElementById("item-cart").innerHTML = "Items " + cart.length;
@@ -45,8 +45,7 @@ function viewCart(){
     let i = 0;
 
     mycart.forEach((producto) => {
-
-    let count = 2;
+    let count = countingPro(producto,cart)
     let tabla = document.getElementsByClassName("body-table")[0];
     var row = tabla.insertRow(-1);
 
@@ -62,7 +61,7 @@ function viewCart(){
     var amount = row.insertCell(4);
         
     item.innerHTML = ++i;
-    qty.innerHTML = 2;
+    qty.innerHTML = count;
     description.innerHTML = producto.name;
     unitp.innerHTML = producto.price;
     parc = producto.price * count;
@@ -74,21 +73,36 @@ function viewCart(){
     
 }
 
+// No la pude hacer en un arrow function
+function countingPro(product, array){
+    let counting = 0;
+    array.forEach((products) => {
+        if (products.name === product.name) {
+        counting++;
+        }
+    });
+    return counting;
+}
+
 function viewMenu(){
     document.getElementById("myTabContent").style.display='block';
     document.getElementById("order").style.display='none';
+    cleanOrders();
 }
 
+function cleanOrders() {
+    let row = document.getElementsByClassName("body-table")[0];
+    while (row.firstChild) {
+      row.removeChild(row.firstChild);
+    }
+  }
 
 function emptyCart() {
     cart = [];
-    let filas = document.getElementsByClassName("body-table")[0];
-    document.getElementById("item-cart").innerHTML = "Items " + cart.length;
-    document.getElementById("item-cart").style.display='none';
+    
+    document.getElementById("item-cart").innerHTML = "Items " + 0;
 
-    while (filas.firstChild) {
-      filas.removeChild(filas.firstChild);
-    }
+    cleanOrders()
     viewMenu()
     alert("Your order was canceled, the cart is now empty");
 
