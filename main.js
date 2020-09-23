@@ -30,12 +30,32 @@ function addProduct(product, section) {
 function addToCar(param){
     cart.push(param)
     document.getElementById("item-cart").innerHTML = "Items";
-    console.log(param)
+    
+    var tabla = document.getElementsByClassName("body-table")[0];
+    var row = tabla.insertRow(-1);
+
+    // Inserta un columna en la fila item
+    var item = row.insertCell(0);
+    // Inserta una columna en la fila qty
+    var qty = row.insertCell(1);
+    // Inserta una columna en la fila description
+    var description = row.insertCell(2);
+    // Inserta una columna en la fila unit price
+    var unitp = row.insertCell(3);
+    // Inserta una columna en la fila amount
+    var amount = row.insertCell(4);
+
+    item.innerHTML = "edrfghjk";
+    qty.innerHTML = "edrfghjk";
+    description.innerHTML = "edrfghjk";
+    unitp.innerHTML = "edrfghjk";
+    amount.innerHTML = "edrfghjk";
 }
 
 function viewCart(){
     document.getElementById("myTabContent").style.display='none';
     document.getElementById("order").style.display='block';
+    
 
 }
 
