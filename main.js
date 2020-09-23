@@ -6,7 +6,7 @@ fetch("https://gist.githubusercontent.com/josejbocanegra/9a28c356416badb8f9173da
     .then(data => data.json().then(content => {
         foodCategories = content;
         foodCategories.forEach(category => {
-            let section = document.getElementById(category.name + "Deck");
+            let section = document.getElementById(category.name + "Menu");
             category.products.forEach(product => {
                 addProduct(product, section);
                 products.push(product);
@@ -15,16 +15,18 @@ fetch("https://gist.githubusercontent.com/josejbocanegra/9a28c356416badb8f9173da
     }));
 
 function addProduct(product, section) {
-    section.innerHTML += `<div class="card col-3 my-3" style="max-width: 13rem; min-width: 13rem;">
-    <img class="card-img-top" src="${product.image}" alt="${product.name}">
-    <div class="card-body">
-      <h5 class="card-title">${product.name}</h5>
-      <p class="card-text">${product.description}</p>
-      <p class="card-text"><strong>$${product.price}</strong></p>
-      <a href="#" class="btn btn-dark" onclick="addToCar('${product.name}');">Add to cart</a>
-    </div>
-  </div>
-</div>`;
+    section.innerHTML += `
+        <div class="col-3">
+        <div class="card">
+        <img class="card-img-top" src="${product.image}" alt="${product.name}">
+        <div class="card-body">
+        <h5 class="card-title">${product.name}</h5>
+        <p class="card-text">${product.description}</p>
+        <p class="card-text"><strong>$${product.price}</strong></p>
+        <a href="#" class="btn btn-dark" onclick="addToCar('${product.name}');">Add to cart</a>
+        </div>
+        </div>
+        </div>`;
 }
 
 function addToCar(param){

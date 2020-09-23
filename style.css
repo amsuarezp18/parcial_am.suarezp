@@ -70,3 +70,8 @@ li{
     border-style: groove;
     border-radius: 5px;
   }
+
+  .space {
+      margin: 0 12px 12px 12px;
+      color: gray;
+  }
