@@ -34,6 +34,12 @@ function addToCar(param){
 }
 
 function viewCart(){
-    document.getElementById("section-categories")
-    
+    document.getElementById("myTabContent").style.display='none';
+    document.getElementById("order").style.display='block';
+
+}
+
+function viewMenu(){
+    document.getElementById("myTabContent").style.display='block';
+    document.getElementById("order").style.display='none';
 }
