@@ -64,8 +64,9 @@ function viewCart(){
     qty.innerHTML = count;
     description.innerHTML = producto.name;
     unitp.innerHTML = producto.price;
-    parc = producto.price * count;
-    amount.innerHTML = parc.toFixed(2);
+    amountP = producto.price * count;
+    total += amountP
+    amount.innerHTML = amountP.toFixed(2);
 
   });
   document.getElementById("total").innerHTML = `Total $${total.toFixed(2)}`;
@@ -98,10 +99,8 @@ function cleanOrders() {
   }
 
 function emptyCart() {
-    cart = [];
-    
+    cart = [];    
     document.getElementById("item-cart").innerHTML = "Items " + 0;
-
     cleanOrders()
     viewMenu()
     alert("Your order was canceled, the cart is now empty");
