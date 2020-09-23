@@ -16,8 +16,8 @@ fetch("https://gist.githubusercontent.com/josejbocanegra/9a28c356416badb8f9173da
 
 function addProduct(product, section) {
     section.innerHTML += `
-        <div class="col-3">
-        <div class="card">
+        <div class="col-3 space">
+        <div class="card h-100">
         <img class="card-img-top" src="${product.image}" alt="${product.name}">
         <div class="card-body">
         <h5 class="card-title">${product.name}</h5>
