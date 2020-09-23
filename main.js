@@ -30,13 +30,19 @@ function addProduct(product, section) {
 }
 
 function addToCar(param){
-    let obj = products.find((producto) => producto.name === param);
-    cart.push(obj)
+    let food = products.find((producto) => producto.name === param);
+    cart.push(food)
+    document.getElementById("item-cart").innerHTML = "Items " + cart.length;
+}
 
+
+function viewCart(){
+    document.getElementById("myTabContent").style.display='none';
+    document.getElementById("order").style.display='block';
+    
     let total = 0;
     let i = 0;
-
-    document.getElementById("item-cart").innerHTML = "Items " + cart.length;
+    
     
     var tabla = document.getElementsByClassName("body-table")[0];
     var row = tabla.insertRow(-1);
@@ -52,17 +58,11 @@ function addToCar(param){
     // Inserta una columna en la fila amount
     var amount = row.insertCell(4);
 
-    item.innerHTML = obj.name;
+    item.innerHTML = ++i;
     qty.innerHTML = obj.name;
     description.innerHTML = obj.name;
     unitp.innerHTML = "edrfghjk";
     amount.innerHTML = "edrfghjk";
-}
-
-function viewCart(){
-    document.getElementById("myTabContent").style.display='none';
-    document.getElementById("order").style.display='block';
-    
 
 }
 
